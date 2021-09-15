@@ -1,0 +1,288 @@
+@charset "utf-8";
+/* -------------------------
+  全体
+------------------------- */
+@import url('https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@100;300;400;500;700;900&display=swap');
+body {
+  font-family: 'Noto Sans JP', 'ヒラギノ角ゴ Pro W3', 'Hiragino Kaku Gothic Pro','メイリオ', 'Meiryo', '游ゴシック', 'Yu Gothic', 'ＭＳ Ｐゴシック', 'MS PGothic', sans-serif;
+  margin: 0;
+  color: #333;
+}
+.wrapper {
+  width: 100%;
+  max-width: 1360px;
+  margin: 0 auto;
+  padding: 0 40px;
+  box-sizing: border-box;
+}
+.container {
+  padding-top: 230px;
+}
+a {
+  color: #333;
+  text-decoration: none;
+  transition: all 0.5s;
+}
+a:hover {
+  opacity: 0.7;
+}
+li {
+  list-style: none;
+}
+.page_title {
+  font-size: 14px;
+  margin-bottom: 30px;
+}
+/* -------------------------
+  header
+------------------------- */
+#header {
+  position: fixed;
+  left: 0;
+  right: 0;
+  display: flex;
+  width: 100%;
+  height: 200px;
+  justify-content: space-between;
+  align-items: center;
+  z-index: 10;
+  background-color: #fff;
+}
+/* -------------------------
+  ハンバーガーメニュー
+------------------------- */
+/*ボタン外側※レイアウトによってpositionや形状は適宜変更してください*/
+.openbtn{
+  position: relative;/*ボタン内側の基点となるためrelativeを指定*/
+  width: 50px;
+  height:50px;
+  cursor: pointer;
+  background:#fff;
+}
+.openbtn.active {
+  background-color: transparent;
+}  
+/*ボタン内側*/
+
+.openbtn span{
+  display: inline-block;
+  transition: all .4s;/*アニメーションの設定*/
+  position: absolute;
+  left: 13px;
+  height: 2px;
+  background-color: #666;
+  }
+
+
+.openbtn span:nth-of-type(1) {
+  top:22px; 
+  width: 50%;
+}
+
+.openbtn span:nth-of-type(2) {
+  top:29px;
+  width:30%;
+}
+
+/*activeクラスが付与されると線が回転して×に*/
+
+.openbtn.active span:nth-of-type(1) {
+  top: 20px;
+  left: 16px;
+  transform: translateY(6px) rotate(-45deg);
+  width: 35%;
+  background-color: #fff;
+}
+
+.openbtn.active span:nth-of-type(2) {
+  top: 32px;
+  left: 16px;
+  transform: translateY(-6px) rotate(45deg);
+  width: 35%;
+  background-color: #fff;
+}
+/*========= レイアウトのためのCSS ===============*/
+.nav_menu {
+  display: none;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  padding: 50px;
+  color: #fff;
+  background: #000;
+  opacity: 0.8;
+}
+.nav_menu li {
+  margin-bottom: 20px;
+}
+.nav_menu li a{
+  color: #fff;
+  text-decoration: none;
+}
+
+/* -------------------------
+  index.html
+------------------------- */
+#top {
+  padding-top: 200px;
+}
+.collection_title {
+  font-size: 30px;
+}
+.collection_item {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+.collection_item li {
+  width: 23%;
+  margin-bottom: 40px;
+}
+.collection_item li img {
+  width: 100%;
+  margin-bottom: 10px;
+}
+.collection_item li p {
+  font-size: 12px;
+}
+.link-text {
+  display: block;
+  text-align: center;
+}
+/* -------------------------
+  collection
+------------------------- */
+.pagination {
+  display: flex;
+  justify-content: center;
+}
+.pagination li {
+  padding: 0 20px;
+}
+/* -------------------------
+  item
+------------------------- */
+#item {
+  display: flex;
+  justify-content: space-between;
+  max-width: 800px;
+  margin-bottom: 60px;
+}
+.item_img {
+  width: 50%;
+}
+.item_img img {
+  width: 100%;
+}
+.item_text {
+  width: 42%;
+  font-size: 14px;
+}
+.item_text p {
+  margin-bottom: 30px;
+}
+.item_text dl {
+  display: flex;
+  flex-wrap: wrap;
+}
+.item_text dt {
+  width: 30%;
+}
+.item_text dd {
+  width: 70%;
+}
+/* -------------------------
+  about
+------------------------- */
+#about {
+  max-width: 600px;
+}
+#about p {
+  margin-bottom: 30px;
+  font-size: 14px;
+}
+/* -------------------------
+  company
+------------------------- */
+#company dl {
+  display: flex;
+  flex-wrap: wrap;
+  max-width: 600px;
+  color: #333;
+  font-size: 14px;
+  
+}
+#company dl dt {
+  width: 30%;
+  padding: 20px 10px;
+  border-bottom: 1px solid #DCDBDB;
+  box-sizing: border-box;
+}
+#company dl dd {
+  width: 70%;
+  padding: 20px 10px;
+  border-bottom: 1px solid #DCDBDB;
+  box-sizing: border-box;
+}
+.ggmap {
+  max-width: 600px;
+  filter: grayscale(1);
+}
+.ggmap iframe {
+  width: 100%;
+  height: 300px;
+}
+/* -------------------------
+  footer
+------------------------- */
+#footer {
+  display: flex;
+  padding-top: 120px;
+  padding-bottom: 20px;
+  justify-content: space-between;
+}
+.sns {
+  display: flex;
+}
+.sns li {
+  margin-right: 30px;
+  font-size: 12px;
+}
+/* -------------------------
+  responsive
+------------------------- */
+@media screen and (max-width: 900px) {
+  #header {
+    height: 100px;
+  }
+  #header h1 img {
+    width: 79%;
+  }
+  .collection_item li {
+    width: 47%;
+  }
+  .item {
+    flex-direction: column;
+  }
+  .item .item_img {
+    width: 100%;
+    margin-bottom: 30px;
+  }
+  .item_text {
+    width: 100%;
+  }
+  #company dl dt {
+    width: 100%;
+    padding-bottom: 5px;
+    border-bottom: none;
+  }
+  #company dl dd {
+    width: 100%;
+    padding-top: 5px;
+  }
+  #footer {
+    flex-direction: column;
+  }
+}
